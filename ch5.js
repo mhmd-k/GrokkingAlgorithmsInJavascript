@@ -23,14 +23,14 @@ voteList.set("Samer", "A");
 voteList.set("Karam", "C");
 voteList.set("Omar", "B");
 
-function vote(name, vote) {
+const vote = (name, vote) => {
   if (voteList.get(name)) {
     console.log(`${name} already voted, kick him/her`);
   } else {
     console.log(`${name} can vote, add him/her to votelist`);
     voteList.set(name, vote);
   }
-}
+};
 
 // Recap
 // To recap, hashes are good for

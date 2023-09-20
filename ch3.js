@@ -7,7 +7,7 @@
 // itself. The base case is when the function doesn’t call itself again
 
 // Ex:
-function countDown(number) {
+const countDown = (number) => {
   console.log(number);
   if (number <= 0) {
     // base case
@@ -16,15 +16,15 @@ function countDown(number) {
     // recursive case
     countDown(number - 1);
   }
-}
+};
 
-function factorial(number) {
+const factorial = (number) => {
   if (number >= 1) {
     return number * factorial(number - 1); // recursive case
   } else {
     return 1; // base case
   }
-}
+};
 
 countDown(5);
 console.log("---------------------");

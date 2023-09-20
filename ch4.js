@@ -9,23 +9,23 @@
 // Ex: recursive function to sum the element of an arr
 const arr = [1, 2, 3, 4, 5];
 
-function sum(arr) {
+const sum = (arr) => {
   if (arr.length === 0) {
     return 0;
   }
   return arr.pop() + sum(arr);
-}
+};
 
 console.log(sum(arr));
 
 // Ex: recursive function to calculate the number of items in a list(arr) == arr.length
-function calcLength(list) {
+const calcLength = (list) => {
   if (+list === 0) {
     return 0;
   }
   list.pop();
   return 1 + calcLength(list);
-}
+};
 
 const itemsList = [
   { id: 0, name: "a" },
@@ -38,7 +38,7 @@ const itemsList = [
 console.log(calcLength(itemsList));
 
 // Ex: find the maximum number in a list
-function maximum(arr, number) {
+const maximum = (arr, number) => {
   if (arr.length === 0) {
     return number; //base case
   }
@@ -48,7 +48,7 @@ function maximum(arr, number) {
     number = lastEle;
   }
   return maximum(arr, number);
-}
+};
 
 const a = [10000, 200, 3, 4, 9];
 
@@ -62,7 +62,7 @@ console.log(maximum(a, 0));
 // Quicksort is a sorting algorithm. It’s much faster than selection sort
 // and is frequently used in real life. Quicksort also uses D&C.
 
-function quickSort(arr = []) {
+const quickSort = (arr = []) => {
   // base case
   if (arr.length < 2) return arr;
 
@@ -75,7 +75,7 @@ function quickSort(arr = []) {
   // Sub-array of all the elements greater than the pivot
   const greaterArr = arr.filter((e) => e > pivot);
   return [...quickSort(lessArr), pivot, ...quickSort(greaterArr)];
-}
+};
 
 const qArr = [3, 7, 3, 12, 5, 4, 8, 1, -2, -90, -4, 0, 87, 62];
 console.log(quickSort(qArr));

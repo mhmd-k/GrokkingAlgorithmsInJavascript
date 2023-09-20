@@ -51,7 +51,7 @@ stations["kfive"] = new Set(["ca", "az"]);
 const finalStations = new Set();
 
 // You need to go through every station and pick the one that covers the most uncovered states.
-function chooseStation() {
+const chooseStation = () => {
   let bestStation = null;
   let statesCovered = [];
   for (let [key, value] of Object.entries(stations)) {
@@ -73,7 +73,7 @@ function chooseStation() {
   statesCovered.forEach((e) => {
     statesNeeded.delete(e);
   });
-}
+};
 
 while (statesNeeded.size > 0) {
   chooseStation();

@@ -47,7 +47,7 @@ parents.set("finish", null);
 // processed, because you don’t need to process a node more than once
 const processed = [];
 
-function findLowestCostNode(costs) {
+const findLowestCostNode = (costs) => {
   let lowestCost = Infinity;
   let lowestCostNode = null;
   for (const [node, nodeCost] of costs) {
@@ -58,9 +58,9 @@ function findLowestCostNode(costs) {
     }
   }
   return lowestCostNode;
-}
+};
 
-function dijkstraAlgorithm(node) {
+const dijkstraAlgorithm = (node) => {
   // If you’ve processed all the nodes, this while loop is done.
   while (node) {
     const cost = costs.get(node);
@@ -80,7 +80,7 @@ function dijkstraAlgorithm(node) {
     // Find the next node to process, and loop.
     node = findLowestCostNode(costs);
   }
-}
+};
 
 dijkstraAlgorithm(findLowestCostNode(costs));
 console.log(costs);

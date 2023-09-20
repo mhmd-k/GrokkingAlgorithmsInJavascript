@@ -51,7 +51,7 @@ graph.set("jonny", []);
 
 // implement breadth-first search in a function to get the nearest mango seller in my connections
 
-function getMangoSeller(name) {
+const getMangoSeller = (name) => {
   let queue = [...graph.get(name)];
   const searchedPeaople = [];
   while (queue.length > 0) {
@@ -70,7 +70,7 @@ function getMangoSeller(name) {
     }
   }
   return "no mango seller in your connection";
-}
+};
 
 console.log(getMangoSeller("you"));
 
